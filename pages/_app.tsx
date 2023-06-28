@@ -7,10 +7,18 @@ import { Inter } from 'next/font/google';
 
 import '@/styles/globals.css';
 
+import React, { useEffect } from 'react';
+import ReactGA from 'react-ga4';
+
 const inter = Inter({ subsets: ['latin'] });
 
 function App({ Component, pageProps }: AppProps<{}>) {
   const queryClient = new QueryClient();
+
+  useEffect(() => {
+    ReactGA.initialize("YOUR_GA$_PROJECT_ID");
+    ReactGA.send("pageview");    
+  }, []);
 
   return (
     <div className={inter.className}>
