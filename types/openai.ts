@@ -9,56 +9,40 @@ export interface OpenAIModel {
 }
 
 export enum OpenAIModelID {
-  GPT_3_5 = 'gpt-3.5-turbo',
-  GPT_3_5_AZ = 'gpt-35-turbo',
-  GPT_3_5_16K = 'gpt-3.5-turbo-16k',
-  GPT_4 = 'gpt-4',
-  GPT_4_32K = 'gpt-4-32k',
-  GPT_4_TURBO = 'gpt-4-1106-preview',
+  GPT_4_O = 'gpt-4o',
+  GPT_4_O_MINI = 'gpt-4o-mini',
+  GPT_4_O_1_PREVIEW = 'o1-preview',
+  GPT_4_O_1_MINI = 'o1-mini'
 }
 
 // in case the `DEFAULT_MODEL` environment variable is not set or set to an unsupported model
-export const fallbackModelID = OpenAIModelID.GPT_3_5;
+export const fallbackModelID = OpenAIModelID.GPT_4_O;
 
 export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
-  [OpenAIModelID.GPT_3_5]: {
-    id: OpenAIModelID.GPT_3_5,
-    name: 'GPT-3.5',
-    maxLength: 12000,
-    tokenLimit: 4000,
-    requestLimit: 3000,
+  [OpenAIModelID.GPT_4_O]: {
+    id: OpenAIModelID.GPT_4_O,
+    name: 'GPT-4-O（推奨モデル）',
+    maxLength: 380000,
+    tokenLimit: 128000,
+    requestLimit: 95000,
   },
-  [OpenAIModelID.GPT_3_5_16K]: {
-    id: OpenAIModelID.GPT_3_5_16K,
-    name: 'GPT-3.5-16K',
-    maxLength: 48000,
-    tokenLimit: 16000,
-    requestLimit: 12000,
+  [OpenAIModelID.GPT_4_O_MINI]: {
+    id: OpenAIModelID.GPT_4_O_MINI,
+    name: 'GPT-4-O-MINI',
+    maxLength: 380000,
+    tokenLimit: 128000,
+    requestLimit: 95000,
   },
-  [OpenAIModelID.GPT_3_5_AZ]: {
-    id: OpenAIModelID.GPT_3_5_AZ,
-    name: 'GPT-3.5',
-    maxLength: 12000,
-    tokenLimit: 4000,
-    requestLimit: 3000,
+  [OpenAIModelID.GPT_4_O_1_PREVIEW]: {
+    id: OpenAIModelID.GPT_4_O_1_PREVIEW,
+    name: 'GPT-4-O-1-PREVIEW',
+    maxLength: 380000,
+    tokenLimit: 128000,
+    requestLimit: 95000,
   },
-  [OpenAIModelID.GPT_4]: {
-    id: OpenAIModelID.GPT_4,
-    name: 'GPT-4',
-    maxLength: 24000,
-    tokenLimit: 8000,
-    requestLimit: 6000,
-  },
-  [OpenAIModelID.GPT_4_32K]: {
-    id: OpenAIModelID.GPT_4_32K,
-    name: 'GPT-4-32K',
-    maxLength: 96000,
-    tokenLimit: 32000,
-    requestLimit: 24000,
-  },
-  [OpenAIModelID.GPT_4_TURBO]: {
-    id: OpenAIModelID.GPT_4_TURBO,
-    name: 'GPT-4-TURBO',
+  [OpenAIModelID.GPT_4_O_1_MINI]: {
+    id: OpenAIModelID.GPT_4_O_1_MINI,
+    name: 'GPT-4-O-1-MINI',
     maxLength: 380000,
     tokenLimit: 128000,
     requestLimit: 95000,
