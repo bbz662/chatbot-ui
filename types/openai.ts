@@ -35,14 +35,14 @@ export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
   },
   [OpenAIModelID.GPT_4_O_1_PREVIEW]: {
     id: OpenAIModelID.GPT_4_O_1_PREVIEW,
-    name: 'GPT-4-O-1-PREVIEW',
+    name: 'GPT-4-O-1-PREVIEW（ベータ版）',
     maxLength: 380000,
     tokenLimit: 128000,
     requestLimit: 95000,
   },
   [OpenAIModelID.GPT_4_O_1_MINI]: {
     id: OpenAIModelID.GPT_4_O_1_MINI,
-    name: 'GPT-4-O-1-MINI',
+    name: 'GPT-4-O-1-MINI（ベータ版）',
     maxLength: 380000,
     tokenLimit: 128000,
     requestLimit: 95000,
