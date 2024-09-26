@@ -66,7 +66,7 @@ export const OpenAIStream = async (
         ...messages,
       ],
       max_completion_tokens: (model.tokenLimit - tokenCount),
-      temperature: temperature,
+      temperature: isBeta(model.id) ? 1 : temperature,
       stream: isStream,
     }),
   });
